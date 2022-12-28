@@ -1,0 +1,11 @@
+.author-info {
+    display: flex;
+}
+
+img.author-thumb {
+    height: 40px;
+    width: auto;
+    border-radius: 50%;
+    border: 2px solid;
+    margin-right: 10px;
+}
