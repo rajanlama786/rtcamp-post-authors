@@ -54,16 +54,22 @@ function rpa_contributors_list( $content ) {
 	if( !empty( $contributors ) && count( $contributors ) > 0 ){
 		$rpa_title = sprintf( '<h3>%s</h3>',__('Contributors :', 'rtcamp-post-authors')); ;
 
-		$contrib = ""; 
-
-		foreach( $contributors as $contributor ){
-			$user_obj = get_user_by('id', $contributor);
-			$contrib .=  sprintf('<a class="author-info" href="%s"><img class="author-thumb" src="%2s"><span>%3s</span></a>', esc_url( get_author_posts_url( get_the_author_meta( $contributor ) ) ),esc_url( get_avatar_url( $contributor ) ), esc_attr( $user_obj->user_login ) );
-		}
+		$contrib = contributer($contributors);
+		
 		return $content . $rpa_title . $contrib;
 	}
 	return $content;
 } 
 
-// Show contributor names with their Gravatars.
-// Contributor-names must be clickable and will link to their respective “author” page.
+
+function contributer( $user_ids ){
+	
+	$contrib = ""; 
+	foreach( $user_ids as $user_id ){
+		$user_obj = get_user_by('id', $user_id);
+		$contrib .=  sprintf('<a class="author-info" href="%s"><img class="author-thumb" src="%2s"><span>%3s</span></a>', esc_url( get_author_posts_url( get_the_author_meta( $user_id ) ) ),esc_url( get_avatar_url( $user_id ) ), esc_attr( $user_obj->user_login ) );
+	}
+
+	return $contrib;
+
+}
