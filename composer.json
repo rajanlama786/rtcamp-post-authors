@@ -1,0 +1,24 @@
+{
+  "name": "rajanlama/rtcamp-post-authors",
+  "version": "1.0.0",
+  "description": "This is a test plugins for post authors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "require": {
+    "php": ">=7.0.0",
+    "phpunit/phpunit": "^9.5",
+    "squizlabs/php_codesniffer": "^3.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajanlama786/rtcamp-post-authors.git"
+  },
+  "author": "Rajan Lama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajanlama786/rtcamp-post-authors/issues"
+  },
+  "homepage": "https://github.com/rajanlama786/rtcamp-post-authors#readme",
+}
